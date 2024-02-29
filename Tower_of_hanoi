@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+void tower_of_hanoi(int plates,string from,string auxilary,string destination){
+    if(plates==1){
+        cout<<"moving "<<plates<<" from "<<from<<" to "<<destination<<endl;
+        return;
+    }
+    tower_of_hanoi(plates-1,from,destination,auxilary);
+    cout<<"moving "<<plates<<" from "<<from<<" to "<<destination<<endl;
+    tower_of_hanoi(plates-1,auxilary,from,destination);
+}
+int main(){
+    cout<<"TOWER OF HANOI"<<endl;
+    tower_of_hanoi(64,"Tower 1","Tower 2","Tower 3");
+    return 0;
+}
